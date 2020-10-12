@@ -7,7 +7,7 @@ is_root: true
 ---
 ![](screen-shot-2020-10-08-at-18.57.02.png)
 
-{{% alert color="primary" %}} 
+{{% alert color="primary" %}} j
 
 ![Aspose.HTML for Java Product Logo](home_1.png)
 
