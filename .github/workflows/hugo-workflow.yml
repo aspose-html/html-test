@@ -9,9 +9,9 @@ jobs:
     runs-on: [self-hosted, linux, x64, hugo-dev-dev4]
     steps:
       - name: hugo build
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
         run: |
           ls
-          echo "This is github action - ${{github.action}}"
-          echo "Base ref - ${{github.base_ref}}"
-          echo "Event name - ${{github.event_name}}"
-          echo "Tag ref - ${{github.ref}}"
+          echo "$GITHUB_CONTEXT"
+          echo ${{ github.event.pull_request.title }}
