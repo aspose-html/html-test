@@ -11,3 +11,5 @@ jobs:
       - name: hugo build
         run: |
           ls
+          echo "This is github action - ${{github.action}}"
+          echo "Base ref - ${{github.base_ref}}"
