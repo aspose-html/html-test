@@ -9,9 +9,6 @@ jobs:
     runs-on: [self-hosted, linux, x64, hugo-dev-dev4]
     steps:
       - name: hugo build
-        env:
-          GITHUB_CONTEXT: ${{ toJson(github) }}
         run: |
           ls
-          echo "$GITHUB_CONTEXT"
           echo ${{ github.event.pull_request.title }}
