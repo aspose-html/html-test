@@ -15,4 +15,4 @@ jobs:
           content_parent_dir=`echo $dirname |sed 's/\/.*//'`
           cd /home/valeriyten/distr/hugo-build-dev/html-test/ && git stash && git pull
           rm -rf /home/valeriyten/distr/hugo-build-dev/lutsk-aspose-prototype/content/* && rm -rf /home/valeriyten/distr/hugo-build-dev/lutsk-aspose-prototype/public/*
-          rsync --progress -r $content_parent_dir/ /home/valeriyten/hugo-build-dev/content/$content_parent_dir/ --delete && cd /home/valeriyten/hugo-build-dev/ && hugo
+          rsync --progress -r $content_parent_dir/ /home/valeriyten/distr/hugo-build-dev/lutsk-aspose-prototype/content/$content_parent_dir/ --delete && cd /home/valeriyten/distr/hugo-build-dev/lutsk-aspose-prototype/ && hugo
