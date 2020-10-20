@@ -10,9 +10,8 @@ jobs:
     steps:
       - name: hugo build
         run: |
-          filename_pre=`echo ${{ github.event.pull_request.title }}| grep -oP '(?<=.Page .).+(?=.)'` && filename_replace="index" && filename_after="${filename_pre/_index/$filename_replace}"
           filename=${{github.head_ref}}
-          dirname={$filename#*/}
+          dirname=${filename#*/}
           content_parent_dir=`echo $dirname |sed 's/\/.*//'`
           cd /home/valeriyten/distr/hugo-build-dev/html-test/ && git stash && git pull
           rm -rf /home/valeriyten/distr/hugo-build-dev/lutsk-aspose-prototype/content/* && rm -rf /home/valeriyten/distr/hugo-build-dev/lutsk-aspose-prototype/public/*
