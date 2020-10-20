@@ -13,7 +13,10 @@ jobs:
           filename=${{github.head_ref}}
           dirname=${filename#*/}
           content_parent_dir=`echo $dirname |sed 's/\/.*//'`
+          dir1=${filename%/*}
+          dir2=${dir1##*/}
+          final_directory="${content_parent_dir}/${dir2}"
           cd /home/valeriyten/distr/hugo-build-dev/html-test/ && git stash && git pull
           rm -rf /home/valeriyten/distr/hugo-build-dev/lutsk-aspose-prototype/content/* && rm -rf /home/valeriyten/distr/hugo-build-dev/lutsk-aspose-prototype/public/*
-          rsync --progress -r $content_parent_dir/ /home/valeriyten/distr/hugo-build-dev/lutsk-aspose-prototype/content/$content_parent_dir/ --delete && cd /home/valeriyten/distr/hugo-build-dev/lutsk-aspose-prototype/ && hugo
-          rsync --progress -r public/$content_parent_dir/ /home/valeriyten/distr/hugo-preview-development/lutsk-aspose-prototype/public/$content_parent_dir --delete
+          rsync --progress -r $content_parent_dir/ /home/valeriyten/distr/hugo-build-dev/lutsk-aspose-prototype/content/$content_parent_dir/ --delete && cd /home/valeriyten/distr/hugo-build-dev/lutsk-aspose-prototype/ && hugo --minify --baseURL https://docs.aspose.cloud/html
+          rsync --progress -r public/$final_directory/ /home/valeriyten/distr/hugo-preview-development/lutsk-aspose-prototype/public/$cfinal_directory --delete
