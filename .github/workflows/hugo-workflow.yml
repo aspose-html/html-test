@@ -22,4 +22,4 @@ jobs:
           rm -rf /home/valeriyten/distr/hugo-build-dev/lutsk-aspose-prototype/content/* && rm -rf /home/valeriyten/distr/hugo-build-dev/lutsk-aspose-prototype/public/*
           rsync --recursive --delete --force $content_parent_dir/ /home/valeriyten/distr/hugo-build-dev/lutsk-aspose-prototype/content/$content_parent_dir/ 
           cd /home/valeriyten/distr/hugo-build-dev/lutsk-aspose-prototype/ && hugo --baseURL https://gpu4.saltov.dynabic.com:1313/
-          rsync --recursive --delete --force public/$content_parent_dir /home/valeriyten/distr/hugo-preview-development/lutsk-aspose-prototype/public/$content_parent_dir
+          rsync --recursive --delete --force public/$content_parent_dir/ /home/valeriyten/distr/hugo-preview-development/lutsk-aspose-prototype/public/$content_parent_dir/
