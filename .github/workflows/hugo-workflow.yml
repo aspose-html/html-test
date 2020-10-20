@@ -11,4 +11,5 @@ jobs:
       - name: Git checkout
         uses: actions/checkout@master
       - name: Hugo build
-        run: ls
+        run: |
+        ls
