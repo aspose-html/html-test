@@ -18,5 +18,5 @@ jobs:
           final_directory="${content_parent_dir}/${dir2}"
           cd /home/valeriyten/distr/hugo-build-dev/html-test/ && git stash && git pull
           rm -rf /home/valeriyten/distr/hugo-build-dev/lutsk-aspose-prototype/content/* && rm -rf /home/valeriyten/distr/hugo-build-dev/lutsk-aspose-prototype/public/*
-          rsync --progress -r $content_parent_dir/ /home/valeriyten/distr/hugo-build-dev/lutsk-aspose-prototype/content/$content_parent_dir/ --delete && cd /home/valeriyten/distr/hugo-build-dev/lutsk-aspose-prototype/ && hugo --minify --baseURL https://docs.aspose.cloud/html
-          rsync --progress -r public/$final_directory/ /home/valeriyten/distr/hugo-preview-development/lutsk-aspose-prototype/public/$cfinal_directory --delete
+          rsync --progress -r $content_parent_dir/ /home/valeriyten/distr/hugo-build-dev/lutsk-aspose-prototype/content/$content_parent_dir/ --delete && cd /home/valeriyten/distr/hugo-build-dev/lutsk-aspose-prototype/ && hugo --baseURL https://gpu4.saltov.dynabic.com:1313/
+          rsync --progress -r public/$content_parent_dir /home/valeriyten/distr/hugo-preview-development/lutsk-aspose-prototype/public/$content_parent_dir --delete
