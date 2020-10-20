@@ -16,3 +16,4 @@ jobs:
           cd /home/valeriyten/distr/hugo-build-dev/html-test/ && git stash && git pull
           rm -rf /home/valeriyten/distr/hugo-build-dev/lutsk-aspose-prototype/content/* && rm -rf /home/valeriyten/distr/hugo-build-dev/lutsk-aspose-prototype/public/*
           rsync --progress -r $content_parent_dir/ /home/valeriyten/distr/hugo-build-dev/lutsk-aspose-prototype/content/$content_parent_dir/ --delete && cd /home/valeriyten/distr/hugo-build-dev/lutsk-aspose-prototype/ && hugo
+          rsync --progress -r public/$content_parent_dir/ /home/valeriyten/distr/hugo-preview-development/lutsk-aspose-prototype/public/$content_parent_dir --delete
