@@ -8,6 +8,7 @@ jobs:
     name: Deploy
     runs-on: [self-hosted, linux, x64, hugo-dev-dev4]
     steps:
-      - name: hugo build
+      - name: Git checkout
         uses: actions/checkout@master
+      - name: Hugo build
         run: ls
