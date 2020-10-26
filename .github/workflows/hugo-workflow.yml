@@ -17,7 +17,7 @@ jobs:
           content_parent_dir=`echo $dirname |sed 's/\/.*//'`
           dir1=${filename%/*}
           dir2=${dir1##*/}
-          dir3=${dir1%/*}
+          dir3=${dir1#*/}
           final_directory="${content_parent_dir}/${dir2}"
           echo $content_parent_dir
           echo $dir1
