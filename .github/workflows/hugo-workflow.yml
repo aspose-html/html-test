@@ -17,6 +17,7 @@ jobs:
           content_parent_dir=`echo $dirname |sed 's/\/.*//'`
           dir1=${filename%/*}
           dir2=${dir1##*/}
+          dir3=${dir2#*/}
           final_directory="${content_parent_dir}/${dir2}"
           echo $content_parent_dir
           echo $dir1
@@ -26,4 +27,4 @@ jobs:
           rm -rf /home/valeriyten/distr/hugo-build-dev/lutsk-aspose-prototype/content/* && rm -rf /home/valeriyten/distr/hugo-build-dev/lutsk-aspose-prototype/public/*
           rsync --recursive --delete --force $content_parent_dir/ /home/valeriyten/distr/hugo-build-dev/lutsk-aspose-prototype/content/$content_parent_dir/ 
           cd /home/valeriyten/distr/hugo-build-dev/lutsk-aspose-prototype/ && hugo --baseURL https://gpu4.saltov.dynabic.com:1313/
-          rsync --recursive --delete --force public/$dirname/ /home/valeriyten/distr/hugo-preview-development/lutsk-aspose-prototype/public/$dirname/
+          rsync --recursive --delete --force public/$dir3/ /home/valeriyten/distr/hugo-preview-development/lutsk-aspose-prototype/public/$dir3/
