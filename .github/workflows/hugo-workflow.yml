@@ -20,6 +20,8 @@ jobs:
           dir3=${dir2%/*}
           final_directory="${content_parent_dir}/${dir2}"
           echo $content_parent_dir
+          echo $dir1
+          echo $dir2
           echo $dir3
           rm -rf /home/valeriyten/distr/hugo-build-dev/lutsk-aspose-prototype/content/* && rm -rf /home/valeriyten/distr/hugo-build-dev/lutsk-aspose-prototype/public/*
           rsync --recursive --delete --force $content_parent_dir/ /home/valeriyten/distr/hugo-build-dev/lutsk-aspose-prototype/content/$content_parent_dir/ 
